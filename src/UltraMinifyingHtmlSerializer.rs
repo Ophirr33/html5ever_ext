@@ -703,7 +703,7 @@ impl<W: Write> UltraMinifyingHtmlSerializer<W>
 		let contents = contents.borrow();
 		let contents = contents.deref();
 		
-		if is_inter_element_whitespace(contents)
+		if collapse_whitespace && is_inter_element_whitespace(contents)
 		{
 			return Ok(());
 		}
